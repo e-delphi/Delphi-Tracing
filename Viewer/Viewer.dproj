@@ -146,6 +146,7 @@
         <DCCReference Include="src\Viewer.Classes.pas"/>
         <DCCReference Include="src\Viewer.Export.JSON.pas"/>
         <DCCReference Include="src\Viewer.Export.CSV.pas"/>
+        <DCCReference Include="src\Viewer.Export.SQLite.pas"/>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
         </BuildConfiguration>

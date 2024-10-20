@@ -7,8 +7,10 @@ program Viewer;
 
 uses
   Viewer.Classes in 'src\Viewer.Classes.pas',
-  Viewer.Export.JSON in 'src\Viewer.Export.JSON.pas';
+  Viewer.Export.JSON in 'src\Viewer.Export.JSON.pas',
+  Viewer.Export.CSV in 'src\Viewer.Export.CSV.pas',
+  Viewer.Export.SQLite in 'src\Viewer.Export.SQLite.pas';
 
 begin
-  TViewer.Read('Mapper.json', 'Logger.log', TExportJSON.SaveToFile('Viewer.json'));
+  TViewer.Read('Mapper.json', 'Logger.log', TExportSQLite.SaveToFile('Viewer.db'));
 end.
