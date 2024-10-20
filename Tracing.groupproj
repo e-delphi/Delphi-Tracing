@@ -1,0 +1,60 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{05E96080-49DA-4ED1-85F3-5DB02A4EA012}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="Mapper\Mapper.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Logger\Logger.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Viewer\Viewer.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="Mapper">
+        <MSBuild Projects="Mapper\Mapper.dproj"/>
+    </Target>
+    <Target Name="Mapper:Clean">
+        <MSBuild Projects="Mapper\Mapper.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="Mapper:Make">
+        <MSBuild Projects="Mapper\Mapper.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Logger">
+        <MSBuild Projects="Logger\Logger.dproj"/>
+    </Target>
+    <Target Name="Logger:Clean">
+        <MSBuild Projects="Logger\Logger.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="Logger:Make">
+        <MSBuild Projects="Logger\Logger.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Viewer">
+        <MSBuild Projects="Viewer\Viewer.dproj"/>
+    </Target>
+    <Target Name="Viewer:Clean">
+        <MSBuild Projects="Viewer\Viewer.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="Viewer:Make">
+        <MSBuild Projects="Viewer\Viewer.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="Mapper;Logger;Viewer"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="Mapper:Clean;Logger:Clean;Viewer:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="Mapper:Make;Logger:Make;Viewer:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>
