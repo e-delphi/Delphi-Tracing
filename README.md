@@ -27,3 +27,5 @@ Este projeto mapeia automaticamente os métodos de um arquivo `.pas` e insere um
 - Compile e execute o projeto `Viewer`
   - Verifique na pasta `bin`, deve ter gerado um arquivo `Viewer.json`
   - Nesse arquivo vai estar a pilha das chamadas de todos os métodos executados com a data e hora de cada entrada e saída
+
+[Demonstração de como usar](https://github.com/e-delphi/Delphi-Tracing/blob/main/demo.mp4)
