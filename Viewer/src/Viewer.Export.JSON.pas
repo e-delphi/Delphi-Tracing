@@ -5,8 +5,7 @@ interface
 
 uses
   System.JSON,
-  Viewer.Classes,
-  Logger.Classes;
+  Viewer.Classes;
 
 type
   TExportJSON = record
@@ -17,7 +16,6 @@ type
 implementation
 
 uses
-  System.SysUtils,
   System.Classes,
   System.DateUtils;
 
@@ -40,7 +38,7 @@ begin
           oJSON := TJSONObject.Create;
           aJSON.Add(oJSON);
 
-          oJSON.AddPair('Kind', Integer(Event.Kind));
+          oJSON.AddPair('Kind', Byte(Event.Kind));
           oJSON.AddPair('ThreadId', Event.ThreadId);
           oJSON.AddPair('At', DateToISO8601(Event.At));
           oJSON.AddPair('MethodID', Event.Method.ID);

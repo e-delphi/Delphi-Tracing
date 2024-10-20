@@ -13,7 +13,9 @@ type
 
   TLogger = record
   private
+    {$IFDEF LOG}
     class var FILE_NAME: String;
+    {$ENDIF}
     class procedure AppendToFile(const Bytes: TBytes); static;
   public
     class procedure Enter(const ID: Integer); static;
@@ -74,8 +76,7 @@ begin
   end;
 end;
 
-{ THLoggerKinds }
-
+{$IFDEF LOG}
 initialization
   FFileLock := TCriticalSection.Create;
   TLogger.FILE_NAME := ChangeFileExt(ParamStr(0), '.log');
@@ -87,5 +88,6 @@ initialization
 finalization
   FFileLock.Free;
   FFileStream.Free;
+{$ENDIF}
 
 end.

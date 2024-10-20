@@ -6,7 +6,6 @@ program Logger;
 {$R *.res}
 
 uses
-  System.SysUtils,
   Logger.Classes in 'src\Logger.Classes.pas',
   Logger.Test in 'src\Logger.Test.pas';
 

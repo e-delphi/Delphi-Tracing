@@ -6,9 +6,6 @@ program Viewer;
 {$R *.res}
 
 uses
-  System.SysUtils,
-  Logger.Classes,
-  Mapper.Classes,
   Viewer.Classes in 'src\Viewer.Classes.pas',
   Viewer.Export.JSON in 'src\Viewer.Export.JSON.pas';
 
