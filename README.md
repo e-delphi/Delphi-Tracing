@@ -9,3 +9,21 @@ Este projeto mapeia automaticamente os métodos de um arquivo `.pas` e insere um
 #### Referências
 - Inspirado nesse projeto [ase379/gpprofile2017](https://github.com/ase379/gpprofile2017) com foco em simplicidade.
 - Utiliza [RomanYankovsky/DelphiAST](https://github.com/RomanYankovsky/DelphiAST) para identificar a posição do `uses` e a declaração `begin` e `end` de cada método.
+
+> [!CAUTION]
+> Recomendo fazer um backup dos fontes antes de fazer o mapeamento.
+
+> [!TIP]
+> Abra uma [Issue](https://github.com/e-delphi/Delphi-Tracing/issues/new) se você encontrar algum bug ou sugestão de melhoria.
+
+### Como usar
+- Compile e execute o projeto `Mapper`
+  - Ele analiza e insere o mapeamento no fonte `.\Logger\src\Logger.Test.pas` do projeto `Logger`
+  - Verifique na pasta `bin`, deve ter gerado um arquivo `Mapper.json`
+  - É possível remover o mapeamento usando o método `TMapper.Disable(Units);`
+- Compile e execute o projeto `Logger`
+  - Verifique na pasta `bin`, deve ter gerado um arquivo `Logger.log`
+  - Esse projeto contem o fonte `Logger.Test.pas` que foi mapeado na etapa anterior pelo `Mapper`
+- Compile e execute o projeto `Viewer`
+  - Verifique na pasta `bin`, deve ter gerado um arquivo `Viewer.json`
+  - Nesse arquivo vai estar a pilha das chamadas de todos os métodos executados com a data e hora de cada entrada e saída
